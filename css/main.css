@@ -1,0 +1,464 @@
+@charset "UTF-8";
+/******************************************************************************
+ *
+ * Default styles
+ *
+ ******************************************************************************/
+* {
+  font-family: Helvetica, Arial;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 15px;
+  min-height: 100%;
+  overflow-y: scroll;
+  overflow: -moz-scrollbars-vertical;
+}
+
+body {
+  background-color: #d3c8ac;
+  height: 100%;
+}
+
+h1,
+h1 a,
+h1 a:hover,
+h2,
+h3,
+h4 {
+  color: #000;
+  font-family: "Lato", Helvetica, Arial;
+  text-decoration: none;
+}
+
+a {
+  color: #582c08;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #a05013;
+}
+
+ul {
+  list-style-type: square;
+}
+
+ol li,
+ul li {
+  margin-left: 1.3em;
+}
+
+blockquote {
+  background: #d1bb94;
+  border-left: 4px solid #7b5836;
+  display: flex;
+  margin-top: 10px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+}
+
+blockquote p {
+  color: #444;
+  position: relative;
+  top: 8px;
+}
+
+small {
+  display: block;
+  margin: 0 auto;
+  max-width: 750px;
+  text-align: center;
+}
+
+hr {
+  background-color: #ccc;
+  border: none;
+  height: 1px;
+  margin-bottom: 25px;
+  margin-top: 25px;
+}
+
+.hidden {
+  display: none;
+}
+
+/******************************************************************************
+ *
+ * Table of contents (experimental)
+ *
+ ******************************************************************************/
+.toc {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.toc ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.toc > li {
+  margin: 0;
+  padding: 0 0 0 1em;
+  position: relative;
+}
+.toc li .caret {
+  cursor: pointer;
+  user-select: none;
+  display: inline-block;
+  padding-left: 1.1em;
+}
+.toc li .caret::before {
+  content: "▶";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 0.9em;
+  transition: transform 0.2s;
+}
+.toc li.expanded .caret::before {
+  content: "▼";
+}
+.toc ul {
+  display: none;
+}
+.toc li.expanded ul {
+  display: block;
+}
+
+/******************************************************************************
+ *
+ * Display width
+ *
+ ******************************************************************************/
+.page,
+.footer,
+.header > .inner {
+  margin: 0 auto;
+  width: 900px;
+}
+
+/******************************************************************************
+ *
+ * Header
+ *
+ ******************************************************************************/
+.header {
+  background: rgba(139, 65, 0, 0.6705882353);
+}
+.header > .inner {
+  align-items: center;
+  display: flex;
+  padding: 19px 0 21px 0;
+}
+.header > .inner > .links {
+  display: flex;
+  flex-grow: 1;
+  justify-content: end;
+}
+.header hr {
+  border: 0;
+  border-bottom: 1px solid #bbb;
+  margin: 0;
+  padding: 0;
+}
+.header h1,
+.header h1 a {
+  color: #fff;
+  flex-grow: 1;
+  font-size: 22px;
+  font-style: italic;
+  font-weight: 400;
+}
+.header .links {
+  margin-right: 15px;
+}
+.header .links > a {
+  color: #fff;
+  font-family: "Lato", Helvetica, Arial;
+  font-size: 15px;
+  font-weight: 600;
+  margin-right: 11px;
+  padding: 4px;
+  text-transform: uppercase;
+}
+.header .links > a:hover {
+  text-decoration: underline;
+}
+.header p {
+  color: #000;
+  font-family: "Lato", Helvetica, Arial;
+  font-size: 16px;
+  margin: 10px 0 14px 0;
+}
+
+/******************************************************************************
+ *
+ * Content
+ *
+ ******************************************************************************/
+.content {
+  display: inline-block;
+  padding-top: 6px;
+  width: 100%;
+}
+.content h1,
+.content h1 a,
+.content h2,
+.content h2 a,
+.content h3,
+.content h3 a {
+  font-family: "Lato", Helvetica, Arial;
+  color: #582c07;
+}
+.content h1 {
+  font-style: italic;
+  font-size: 23px;
+  margin: 18px 5px 0 0;
+  padding-bottom: 0.15em;
+}
+.content img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+  margin: 23px auto;
+}
+.content h1 a:hover,
+.content h2 a:hover,
+.content h3 a:hover {
+  color: #a05013;
+}
+.content h1 span {
+  display: none;
+}
+.content .time {
+  color: #8c694b;
+  display: block;
+  font-style: italic;
+  font-size: 12px;
+  font-weight: normal;
+  line-height: 1.5em;
+  margin: 8px 0 14px 0;
+  position: relative;
+  left: -1px;
+}
+.content h2 {
+  font-weight: 700;
+  font-size: 20px;
+  margin: 1.3em 0 0 0;
+}
+.content h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 1.2em 0.8em 0.5em 0px;
+}
+.content p,
+.content ol,
+.content ul,
+.content ol li,
+.content ul li {
+  font-size: 16px;
+}
+.content p {
+  line-height: 26px;
+  margin: 11px 1px 4px 0px;
+}
+.content ol,
+.content ul {
+  clear: both;
+  margin: 0.4em 0.6em 0.4em 1.4em;
+}
+.content ol.links,
+.content ul.links {
+  margin-top: 15px;
+}
+.content ol li,
+.content ul li {
+  line-height: 23px;
+  margin-bottom: 3px;
+}
+.content ol li small,
+.content ul li small {
+  margin-bottom: 10px;
+}
+.content ol li p > small,
+.content ul li p > small {
+  margin-top: 7px;
+  margin-bottom: 12px;
+}
+.content ol li:last-child,
+.content ul li:last-child {
+  margin-bottom: 0;
+}
+.content ol.links li,
+.content ul.links li {
+  margin-bottom: 0.5em;
+}
+.content code,
+.content code span {
+  font-family: "SFMono-Regular", "Menlo", " Monaco", "Consolas", "Liberation Mono", "Courier New", monospace;
+  font-size: 14px;
+  line-height: 1.4em;
+}
+.content p > code,
+.content li > code {
+  font-size: 14px;
+  line-height: 14px;
+  overflow: hidden;
+  display: inline;
+  background: #fff;
+  border: 1px solid #ddd;
+  padding-top: 2px;
+  padding-left: 4px;
+  padding-right: 3px;
+  margin-right: 1px;
+}
+.content pre.prettyprint {
+  background: #f5f5f5;
+  padding: 1em 0.9em;
+  border-radius: 4px;
+  border-color: #aaa;
+  margin: 1em 0;
+  overflow: auto;
+}
+.content .posts {
+  max-width: 670px;
+}
+.content .post {
+  display: inline-block;
+  clear: both;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  border-bottom: 1px solid #b57e46;
+  padding-bottom: 24px;
+  width: 100%;
+}
+.content .post:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+.content .preview {
+  border: 1px solid #aaa;
+  float: left;
+  margin: 12px 13px 11px 0;
+  vertical-align: bottom;
+}
+.content .readmore {
+  display: inline-block;
+  margin-top: 11px;
+  margin-bottom: 11px;
+}
+.content .MathJax_Display {
+  padding-left: 1.5em;
+  text-align: left !important;
+}
+.content figure {
+  border: 1px solid #ccc;
+  background: #fff;
+  display: table;
+  float: right;
+  position: relative;
+  left: 30px;
+  padding: 10px;
+  margin-top: 4px;
+  margin-bottom: 28px;
+  margin-left: 2px;
+  width: 1px;
+}
+.content figure img {
+  padding: 5px 9px 10px 9px;
+  display: table-row;
+  vertical-align: bottom;
+}
+.content figure figcaption {
+  font-size: 12px;
+  padding: 0em 1em 0.9em 1em;
+  display: table-row;
+  vertical-align: bottom;
+}
+
+/******************************************************************************
+ *
+ * Sidebar
+ *
+ ******************************************************************************/
+.sidebar {
+  float: right;
+  padding: 1em 0 0 0;
+  width: 200px;
+}
+.sidebar h1 {
+  clear: both;
+  font-family: "Lato", Helvetica, Arial;
+  font-style: italic;
+  font-size: 16px;
+  margin: 15px 0 8px 0;
+}
+.sidebar p,
+.sidebar ol,
+.sidebar ul,
+.sidebar ol li,
+.sidebar ul li {
+  font-size: 13px;
+}
+.sidebar h3 {
+  font-size: 12px;
+  font-weight: bold;
+  color: #666;
+}
+.sidebar p {
+  line-height: 1.6em;
+  margin-top: 0.8em;
+  margin-bottom: 0.2em;
+  max-width: 190px;
+}
+.sidebar ol,
+.sidebar ul {
+  margin: 0 0 0.8em 0.4em;
+}
+.sidebar ol li,
+.sidebar ul li {
+  line-height: 1.4em;
+  margin-bottom: 0.3em;
+  margin-right: 0;
+}
+.sidebar .avatar {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 6px;
+  background: #fff;
+}
+.sidebar img.icon {
+  float: left;
+  margin-top: 4px;
+  margin-right: 6px;
+  margin-bottom: 23px;
+  width: 22px;
+  height: 22px;
+}
+
+/******************************************************************************
+ *
+ * Footer
+ *
+ ******************************************************************************/
+.footer {
+  clear: both;
+  margin-top: 0.9em;
+  padding-bottom: 3em;
+  padding: 2em 0 3.1em 0em;
+}
+.footer p {
+  border-top: 1px solid #b57e46;
+  color: #8c694b;
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 400;
+  padding-top: 12px;
+}
+
+/*# sourceMappingURL=main.css.map */
